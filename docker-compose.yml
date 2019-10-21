@@ -1,0 +1,14 @@
+# This is for testing on travis only
+# For production we recommend to rather use
+# image: kartoza/postgis
+# in the dbbackup service
+db:
+  image: kartoza/postgis
+  environment:
+    - ALLOW_IP_RANGE=0.0.0.0/0
+    - POSTGRES_USER=docker
+    - POSTGRES_PASS=docker
+    - POSTGRES_DBNAME=sqlnode
+  ports: 
+    - 5432:5432
+  container_name: nodedatabase
